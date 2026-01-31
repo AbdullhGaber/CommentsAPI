@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.commentsapi.screens.comments.components.CommentItem
-import com.example.data.model.Comment
+import com.example.domain.entity.Comment
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
