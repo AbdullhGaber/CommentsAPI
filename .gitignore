@@ -9,6 +9,8 @@
 /.idea/assetWizardSettings.xml
 /.idea/*
 /data/.gitignore
+/data/.idea/*
+/domain/.idea/*
 /domain/.gitignore
 .DS_Store
 /build
