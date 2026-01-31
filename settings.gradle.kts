@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "CommentsAPI"
 include(":app")
+include(":data")
+include(":domain")

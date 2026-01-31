@@ -51,6 +51,11 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.navigation.compose)
+    implementation(libs.dagger.hilt)
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    ksp(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,22 +63,6 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-
-    // Dagger Hilt for dependency injection
-    implementation(libs.dagger.hilt)
-    ksp(libs.hilt.compiler)
-
-    // Retrofit for networking
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
-
-    // Gson for JSON parsing
-    implementation(libs.gson)
-
-    // Navigation for Compose
-    implementation(libs.navigation.compose)
-
-    // Unit Testing
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.kotlin)
 }
