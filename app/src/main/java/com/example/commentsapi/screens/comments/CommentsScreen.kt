@@ -11,12 +11,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.example.commentsapi.screens.comments.components.CommentItem
-import com.example.domain.utils.Resource
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment.Companion.Center
-import androidx.lifecycle.viewmodel.compose.viewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)

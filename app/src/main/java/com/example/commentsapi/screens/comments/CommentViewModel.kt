@@ -24,7 +24,6 @@ class CommentViewModel @Inject constructor(
     fun fetchComments() {
         viewModelScope.launch {
             commentsUseCases.getAllCommentsUseCase().collect { result ->
-                println("Debug: Received result $result") // Check your Logcat!
                 _commentsUiState.value = when(result) {
                     is Resource.Loading -> _commentsUiState.value.copy(isLoading = true)
                     is Resource.Success -> _commentsUiState.value.copy(
@@ -32,7 +31,6 @@ class CommentViewModel @Inject constructor(
                         comments = result.data ?: emptyList(),
                         error = null
                     )
-                    // Use the base class or check if it's named 'Error' in your project
                     is Resource.Failure -> _commentsUiState.value.copy(
                         isLoading = false,
                         error = result.message

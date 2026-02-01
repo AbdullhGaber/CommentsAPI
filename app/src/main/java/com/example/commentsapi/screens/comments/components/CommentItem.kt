@@ -1,7 +1,5 @@
 package com.example.commentsapi.screens.comments.components
 
-import android.R.attr.fontWeight
-import android.R.attr.text
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -37,7 +35,7 @@ fun CommentItem(
                 .fillMaxWidth()
         ) {
             Text(
-                text = comment.body,
+                text = comment.user.fullName,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black

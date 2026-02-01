@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.domain.entity.Comment
+import com.example.domain.entity.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,7 +37,7 @@ fun CommentsDetailsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Screen name", fontSize = 18.sp) },
+                title = { Text("Comment", fontSize = 18.sp) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
@@ -59,7 +60,7 @@ fun CommentsDetailsScreen(
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
 
-                Text(text = comment.body, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Text(text = comment.user.fullName, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 Text(text = comment.body, fontSize = 14.sp, color = Color.Gray)
 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -69,7 +70,7 @@ fun CommentsDetailsScreen(
 
                 HorizontalDivider(thickness = 0.5.dp, color = Color.LightGray)
 
-                DetailRow(label = "Email", value = comment.body)
+                DetailRow(label = "username", value = comment.user.username)
             }
         }
     }
@@ -91,11 +92,15 @@ fun DetailRow(label: String, value: String) {
 @Preview
 @Composable
 private fun PreviewCommentsDetailsScreen() {
-
     CommentsDetailsScreen(
         comment = Comment(
             id = 1,
-            body = "a body",
+            body = "some comment",
+            user = User(
+                1,
+                "mustafaa",
+                "Mustafa"
+            )
         ),
         onBackClick = {}
     )
