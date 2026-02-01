@@ -4,5 +4,5 @@ import com.example.data.model.CommentDTO
 import com.example.domain.entity.Comment
 
 fun CommentDTO.toCommentEntity() : Comment{
-    return Comment(id, title, body, email)
+    return Comment(id, body)
 }

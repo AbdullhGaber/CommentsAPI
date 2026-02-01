@@ -59,7 +59,7 @@ fun CommentsDetailsScreen(
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
 
-                Text(text = comment.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Text(text = comment.body, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 Text(text = comment.body, fontSize = 14.sp, color = Color.Gray)
 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -69,7 +69,7 @@ fun CommentsDetailsScreen(
 
                 HorizontalDivider(thickness = 0.5.dp, color = Color.LightGray)
 
-                DetailRow(label = "Email", value = comment.email)
+                DetailRow(label = "Email", value = comment.body)
             }
         }
     }
@@ -95,9 +95,7 @@ private fun PreviewCommentsDetailsScreen() {
     CommentsDetailsScreen(
         comment = Comment(
             id = 1,
-            title =  "title",
             body = "a body",
-            email = "fdaaa@example.com"
         ),
         onBackClick = {}
     )

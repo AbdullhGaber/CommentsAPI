@@ -24,13 +24,13 @@ fun CommentsNavHost(){
             CommentsScreen(
                 viewModel = commentsViewModel,
                 onCommentClick = { index ->
-                    navController.navigate("details/$index")
+                    navController.navigate("${Route.CommentsDetailsScreen.name}/$index")
                 }
             )
         }
 
         composable(
-            route = Route.CommentsDetailsScreen.name,
+            route = Route.CommentsDetailsScreen.name+ "/{index}",
             arguments = listOf(navArgument("index") { type = NavType.IntType })
         ){ backStackEntry ->
             val comments = commentsViewModel.commentsUiState.value.comments
