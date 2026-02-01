@@ -7,4 +7,5 @@ data class CommentDTO(
     @SerializedName("name")
     val title: String,
     val body: String,
+    val email: String,
 )
